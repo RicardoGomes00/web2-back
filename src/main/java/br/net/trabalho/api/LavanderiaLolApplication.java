@@ -8,10 +8,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class Web2Back {
+public class LavanderiaLolApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Web2Back.class, args);
+		SpringApplication.run(LavanderiaLolApplication.class, args);
 	}
 
 	@Bean
