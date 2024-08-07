@@ -35,6 +35,7 @@ CREATE TABLE pedidos (
     preco_total NUMERIC(7,2),
     id_status SERIAL,
     id_cliente SERIAL,
+    data_pedido TIMESTAMP,
     FOREIGN KEY (id_status) REFERENCES STATUS (id),
     FOREIGN KEY (id_cliente) REFERENCES USUARIOS (id)
 );
