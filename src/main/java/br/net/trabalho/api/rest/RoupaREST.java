@@ -47,19 +47,20 @@ public class RoupaREST {
 							 .collect(Collectors.toList());
 	}
 
-	// @GetMapping("/roupas/{id}")
-	// List<RoupaDTO> buscarPorId(@PathVariable("id") int id) {
-	// 	List<Roupa> lista = repo.findAll(); // Tentar mudar para findById ou mudar para o @query de baixo no put
-	// 	return lista.stream().map(e -> mapper.map(e, RoupaDTO.class))
-	// 						 .collect(Collectors.toList());
-	// }
+	 @GetMapping("/roupas/{id}")
+	 List<RoupaDTO> buscarPorId(@PathVariable("id") int id) {
+	 	List<Roupa> lista = repo.findAll(); // Tentar mudar para findById ou mudar para o @query de baixo no put
+	 	return lista.stream().map(e -> mapper.map(e, RoupaDTO.class))
+	 						 .collect(Collectors.toList());
+	 }
 
-	@GetMapping(path = {"roupas/{id}"})
-	public ResponseEntity findById(@PathVariable long id) {
-		return repo.findById(id).map(record -> ResponseEntity.ok().body(record)).orElse(ResponseEntity.notFound().build());
-	}
+	//@GetMapping(path = {"/roupas/{id}"})
+	//public ResponseEntity findById(@PathVariable long id) {
+	//	return repo.findById(id).map(record -> ResponseEntity.ok().body(record)).orElse(ResponseEntity.notFound().build());
+	//}
+	
 
-	@PutMapping(value="roupas/{id}")
+	@PutMapping(value="/roupas/{id}")
 	public ResponseEntity update(@PathVariable("id") long id,
 								@RequestBody Roupa roupa) {
 		return repo.findById(id)
@@ -72,7 +73,7 @@ public class RoupaREST {
 		}).orElse(ResponseEntity.notFound().build());
 	}
 
-	@DeleteMapping(path ={"roupas/{id}"})
+	@DeleteMapping(path ={"/roupas/{id}"})
 	public ResponseEntity<?> delete(@PathVariable long id) {
 		return repo.findById(id)
 		.map(rou -> {

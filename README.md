@@ -77,3 +77,11 @@ VALUES (7, 'finalizado', 'Estado final do pedido');
 INSERT INTO public.status (id, nome, descricao)
 VALUES (8, 'orcamento', 'Pedido no estado de orcamento');
 ```
+```sql
+select * from pagamentos;
+select * from pedidos;
+select * from pedidos_roupas;
+select * from roupas;
+select * from status;
+select * from usuarios;
+```
