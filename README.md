@@ -21,12 +21,14 @@ CREATE TABLE usuarios (
     endereco VARCHAR(255),
     data_nascimento DATE
 );
+
 CREATE TABLE roupas (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255),
     preco NUMERIC(7,2),
     prazo INT
 );
+
 CREATE TABLE pedidos (
     id SERIAL PRIMARY KEY,
     prazo DATE,
@@ -45,8 +47,6 @@ CREATE TABLE pedidos_roupas(
     FOREIGN KEY (id_roupa) REFERENCES roupas (id)
 );
 
-
-
 CREATE TABLE pagamentos(
     id SERIAL PRIMARY KEY,
     metodo VARCHAR(255),
@@ -56,6 +56,7 @@ CREATE TABLE pagamentos(
     FOREIGN KEY (id_pedido) REFERENCES pedidos (id)
 );
 ```
+
 
 ## Script to create status
 ```sql
